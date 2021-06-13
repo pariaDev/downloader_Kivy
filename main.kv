@@ -1,0 +1,129 @@
+#:import Factory kivy.factory.Factory
+
+<MySpinnerOption@SpinnerOption>:
+     background_normal: ''
+     background_color: rgba(112, 37, 165, 100)
+     font_name: 'COMIC'
+
+<tabpanel>:
+
+     txt:txt
+     quality_txt:quality_txt
+
+     prof:prof
+     post_url:post_url
+
+     # size_hint: .3,.3
+     do_default_tab: False
+     tab_pos:'top_mid'
+     tab_width: None
+     background_color: .83, .53, .74
+
+
+     TabbedPanelItem:
+
+          text:'Youtube'
+          font_name: 'MTCORSVA'
+          font_size: 22
+
+          size_hint_x: None
+          width: 180
+          background_color: .43, .46, .74
+
+          FloatLayout:
+               TextInput:
+                    id:txt
+                    hint_text:'link'
+                    size_hint: .7, .09
+                    pos_hint: {'x': .15 ,'top':.9}
+                    font_name: 'COMIC'
+
+               Spinner:
+                    id:quality_txt
+                    text:'quality'
+                    font_name: 'COMIC'
+                    font_size: 20
+                    values:('highest', 'lowest', '240p', '360p', '480p', '720p')
+                    size_hint: .5, .09
+                    pos_hint: {'x': .25 , 'top': .7}
+
+                    background_color: 1.38, .93, 1.75
+                    option_cls: Factory.MySpinnerOption
+                    #values color= 1.11, .47, 1.64
+    
+
+               Button:
+                    text:'download'
+                    size_hint: .7, .1
+                    pos_hint: {'x': .15, 'top': .25}
+                    font_name: 'COMIC'
+                    font_size: 20
+                    background_color: 1.38, .93, 1.75
+
+                    on_release: root.download()
+
+
+
+     TabbedPanelItem:
+
+          text:'instagram'
+          font_name: 'MTCORSVA'
+          font_size: 22
+          size_hint_x: None
+          width: 180
+          background_color: .43, .46, .74
+
+          FloatLayout:
+               TextInput:
+                    id:post_url
+                    hint_text:'post link'
+                    size_hint: .65, .09
+                    pos_hint: {'x': .15 ,'top':.8}
+                    font_name: 'COMIC'
+               Button:
+                    text:'🆑'
+                    size_hint: .1, .09
+                    pos_hint: {'x': .85, 'top': .8}
+                    font_name: 'COMIC'
+                    font_size: 16
+                    background_color: 1.38, .93, 1.75
+
+                    on_press: root.remove_post()
+
+               Button:
+                    text:'download photos'
+                    size_hint: .4, .08
+                    pos_hint: {'x': .275, 'top': .68}
+                    font_name: 'COMIC'
+                    font_size: 16
+                    background_color: 1.38, .93, 1.75
+
+                    on_release: root.d_post()
+
+
+               ######################
+               TextInput:
+                    id:prof
+                    hint_text:'id'
+                    size_hint: .65, .09
+                    pos_hint: {'x': .15 ,'top':.4}
+                    font_name: 'COMIC'
+
+               Button:
+                    text:'🆑'
+                    size_hint: .1, .09
+                    pos_hint: {'x': .85, 'top': .4}
+                    font_name: 'COMIC'
+                    font_size: 16
+                    background_color: 1.38, .93, 1.75
+
+                    on_press: root.remove_id()
+               Button:
+                    text:'download profile pic'
+                    size_hint: .4, .08
+                    pos_hint: {'x': .275, 'top': .28}
+                    font_name: 'COMIC'
+                    font_size: 14
+                    background_color: 1.38, .93, 1.75
+
+                    on_release: root.d_profile()
