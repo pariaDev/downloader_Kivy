@@ -9,7 +9,7 @@ import instaloader
 from instaloader import Instaloader
 from instaloader.structures import Post
 
-# kv= Builder.load_string()
+Builder.load_file('main.kv')
 
 class app(App):
     def build(self):
