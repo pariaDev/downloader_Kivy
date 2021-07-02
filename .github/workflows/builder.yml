@@ -28,7 +28,7 @@ jobs:
         id: buildozer
         with:
           repository_root: master
-          workdir: .github/workflow
+          workdir: downloader_Kivy/.github/workflows
           buildozer_version: stable
 
       - name: Upload artifacts
@@ -41,7 +41,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: data
-          ref: data # Branch name
+          ref: master # Branch name
 
       - name: Set up Python
         uses: actions/setup-python@v2
