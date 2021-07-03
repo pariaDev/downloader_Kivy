@@ -28,7 +28,7 @@ jobs:
         id: buildozer
         with:
           repository_root: master
-          workdir: downloader_Kivy/main.py
+          workdir: downloader_Kivy
           buildozer_version: stable
 
       - name: Upload artifacts
