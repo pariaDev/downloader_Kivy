@@ -27,8 +27,8 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          repository_root: master
-          workdir: pariaDev/downloader_Kivy/main.py
+          repository_root: .
+          workdir: .
           buildozer_version: stable
 
       - name: Upload artifacts
